@@ -5,3 +5,6 @@
 * [セクション２](Section2.md)
 * [セクション３](Section3.md)
 
+---
+
+* [会社紹介](Company.md)
