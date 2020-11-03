@@ -7,4 +7,11 @@
 
 ---
 
+## Tips
+
+* [Chocolateryインストール手順](Chocolatery.md)
+* [Homebrewインストール手順](Homebrew.md)
+
+---
+
 * [会社紹介](Company.md)
