@@ -2,124 +2,148 @@
 
 ## Komposeを利用して、Kubernetes用yamlを作成しよう
 
-React+Go(Gin)+PostgresSQLのテンプレートを利用させてもらおうと思います。
-
-1. 今回利用するテンプレートの[GitHub](https://github.com/el10savio/TODO-Fullstack-App-Go-Gin-Postgres-React)よりプログラムをダウンロードします。
+1. React+Go(Gin)+PostgresSQLのTodoアプリを使用していきます。  
+    今回利用するアプリを[GitHub](https://github.com/miracleave-ltd/go-react-todo)よりプログラムをダウンロードします。
 
     ![github-source-dl](img/github-source-dl.png)
 
-2. Komposeコマンドでdocker-compose.ymlを変換します。  
+2. ローカル環境にDockerイメージを作成します。  
+    ※ダウンロードしたファイルを解凍したフォルダで実行してください。
+
+    1. フロントアプリのビルドを行います。  
+        次のコマンドを実行してください。
+
+        ```shell
+        docker-compose run client npm run build
+        ```
+
+        ![docker-compose-client-build](img/docker-compose-client-build.png)
+
+    2. バックエンドのビルドを行います。  
+        次のコマンドを実行してください。
+
+        ```shell
+        docker-compose run server go build
+        ```
+
+        ![docker-compose-backend-build](img/docker-compose-backend-build.png)
+
+    3. アプリイメージのビルドを行います。  
+        次のコマンドを実行してください。
+
+        ```shell
+        docker-compose -f docker-compose.prod.yml build
+        ```
+
+         ![docker-compose-prod-build](img/docker-compose-prod-build.png)
+
+3. Komposeでは、docker-compose.ymlファイルにKompose用Labelsを記載することで、Kompose用の設定を行うことができます。  
+    ![kompose-guide-labels](img/kompose-guide-labels.png)
+    参考URL：https://kompose.io/user-guide/
+
+    今回は以下の３点を修正します。
+    - ローカルでKubernetesを実行するため、 `kompose.service.type` を設定します。
+    - ローカルコンテナイメージを利用するため、 `kompose.image-pull-policy` を設定します。  
+    - Komposeで `depends_on` が対応していないため、 `port` を追加で設定します。
+
+    対象ファイル：(go-react-todo-master)/docker-compose.prod.yml  
+    ※port,labelsを追加しています。
+
+    ```yml
+    version: '3'
+    services:
+        postgres:
+            image: postgres
+            environment:
+                - POSTGRES_PASSWORD=postgres
+            ports:
+                - "5432:5432"
+        server:
+            build: ./server
+            command: ./app
+            ports:
+                - "3001"
+            depends_on:
+                - "postgres"
+            environment:
+                - POSTGRES_PASSWORD=postgres
+            labels:
+                kompose.image-pull-policy: Never
+        nginx:
+            build: ./nginx
+            ports:
+                - "8000:80"
+            labels:
+                kompose.service.type: nodeport
+                kompose.image-pull-policy: Never
+    ```
+
+4. Komposeコマンドでdocker-compose.ymlを変換します。  
+    `docker-compose.yml` を変換する場合は、 `-f` 以降は不要です。  
+    今回は開発時の者は不要ですので、production環境用のymlファイルをもとに変換します。  
     ※ダウンロードしたファイルを解凍したフォルダで実行してください。
 
     ```Shell
-    kompose convert
+    kompose convert -f docker-compose.prod.yml
     ```
 
     (WindowsPowerShell)
     ![kompose-convert-powershell](img/kompose-convert-powershell.png)
 
-3. 変換後の確認を行います。  
+5. 変換後の確認を行います。  
     次のファイルが生成されていることを確認してください。
 
-    - go-api-service.yaml
+    - nginx-service.yaml
     - postgres-service.yaml
-    - react-app-service.yaml
-    - go-api-deployment.yaml
+    - server-service.yaml
+    - nginx-deployment.yaml
     - postgres-deployment.yaml
-    - react-app-deployment.yaml
+    - server-deployment.yaml
 
-4. ダウンロードしたプログラムに誤りがあるため、修正を行います。
+6. Kubernetes用のyamlファイルは生成できたのですが、Komposeの変換だけでは対応しきれない部分の修正を行います。  
+    ローカルイメージを取得するため、ローカルイメージ名を記載します。  
 
-    対象ファイル：(TODO-Fullstack-App-Go-Gin-Postgres-React-master)/database/Dockerfile
+    対象ファイル：(go-react-todo)/server-deployment.yaml
 
-    ```Shell
-    - 7 COPY init /docker-entrypoint-initdb.d/
-    + 7 COPY *.sql /docker-entrypoint-initdb.d/
+    ```yml
+    - [36] image: server
+    + [36] image: go-react-todo-master_server
     ```
 
-5. ローカル環境にDockerイメージを作成します。
-    ※ダウンロードしたファイルを解凍したフォルダで実行してください。
+    対象ファイル：(go-react-todo)/nginx-deployment.yaml
 
-    ```Shell
-    docker-compose build
+    ```yml
+    - [33] - image: nginx
+    + [33] - image: go-react-todo-master_nginx
     ```
 
-6. Kubernetesに変換したファイルを反映します。
+7. Kubernetesに変換したファイルをKubernetesに反映します。
 
     ```Shell
-    kubectl apply -f go-api-service.yaml -f postgres-service.yaml -f react-app-service.yaml -f go-api-deployment.yaml -f postgres-deployment.yaml -f react-app-deployment.yaml
+    kubectl apply -f nginx-service.yaml -f postgres-service.yaml -f server-service.yaml -f nginx-deployment.yaml -f postgres-deployment.yaml -f server-deployment.yaml
     ```
 
     (WindowsPowerShell)
     ![kubectl-apply-kompose-file](img/kubectl-apply-kompose-file.png)
 
-7. Kubernetesの状態確認を行います。
+8. Kubernetesの状態確認を行います。
 
     ```Shell
-    kubectl get pods
-    kubectl get deployments
-    kubectl get services
+    kubectl get pods,deploy,svc
     ```
+
+    ※deploy -> deployments, svc -> services
 
     (WindowsPowerShell)
-    ![kubectl-get-pod-service](img/kubectl-get-pod-service.png)
+    ![kubectl-get-pod-service-deploy](img/kubectl-get-pod-service-deploy.png)
 
-8. 前述の赤枠部分について、*ImagePullBackOff*となり、正常にPodが起動していないため、起動するように修正します。  
-    原因としては、DockerイメージをPullしようとしてきたが存在しないため、エラーとなっています。  
-    ローカルのDockerイメージを取得するように修正します。  
-    また、goのプログラムが単純にバグがあるので合わせて修正します。
+9. Kubernetesに反映したプロジェクトを確認します。  
+    Kubernetesの状態確認を行った際にNginxの公開されているポートを確認します。  
+    NodePortは動的にポート番号を割り振るため、個々の端末によって異なります。  
+    ![kubectl-get-service-nodeport](img/kubectl-get-service-nodeport.png)
 
-    対象ファイル(1)：(TODO-Fullstack-App-Go-Gin-Postgres-React-master)/react-app-deployment.yaml
+    上記で確認したポート番号のLocalhostにアクセスしてください。  
+    http://localhost:XXXXX
 
-    ```yaml
-    - 29 - image: react-app
-    + 29 - image: todo-fullstack-app-go-gin-postgres-react-master_react-app
-    - 30 imagePullPolicy: ""
-    + 30 imagePullPolicy: Never
-    ```
-
-    対象ファイル(2)：(TODO-Fullstack-App-Go-Gin-Postgres-React-master)/go-api-deployment.yaml
-
-    ```yaml
-    - 29 - image: todo-fullstack-app-go-gin-postgres-react-master_go-api
-    + 29 - image: go-api
-    - 30 imagePullPolicy: ""
-    + 30 imagePullPolicy: Never
-    ```
-
-    対象ファイル(3)：(TODO-Fullstack-App-Go-Gin-Postgres-React-master)/react-app-service.yaml
-
-    ```yaml
-    + 15 nodePort: 30000
-    + 20 type: NodePort
-    ```
-
-    対象ファイル(4)：(TODO-Fullstack-App-Go-Gin-Postgres-React-master)/backend/api/api.go
-
-    ```go
-    - 24 // db, err = sql.Open("postgres", "postgres://postgres:password@postgres/todo?sslmode=disable")
-    + 24 db, err = sql.Open("postgres", "postgres://postgres:password@postgres/todo?sslmode=disable")
-    - 27 db, err = sql.Open("postgres", "postgres://postgres:password@localhost/todo?sslmode=disable")
-    ```
-
-    対象ファイル(5)：(TODO-Fullstack-App-Go-Gin-Postgres-React-master)/backend/main.go
-
-    ```go
-    - 6 api "./api"
-    + 6 api "build/api"
-    ```
-
-9. Kubernetesに修正したファイルを反映します。
-
-    ```Shell
-    kubectl apply -f go-api-deployment.yaml -f react-app-deployment.yaml
-    ```
-
-    (WindowsPowerShell)
-    ![kubectl-apply-deployment](img/kubectl-apply-deployment.png)
-
-10. Kubernetesに反映したプロジェクトを確認します。  
-    次のURLにアクセスしてください。  
-    http://localhost:30000
-
+    Todoアプリが表示しましたらデプロイ完了です。
     ![todo](img/todo.png)

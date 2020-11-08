@@ -27,15 +27,14 @@ RUN npm i -g gitbook-plugin-navigator
 RUN npm i -g gitbook-plugin-collapsible-chapters
 # {% hint style='(info|tip|danger|working)' %} 内容 {% endhint %}
 RUN npm i -g gitbook-plugin-hints
+# コードスニペットにコピーボタンが表示
+RUN npm i -g gitbook-plugin-copy-code-button
 
 # PDF出力の日本語フォント設定 (これがないと日本語表示不可)
 ENV LANG ja_JP.UTF-8
 # 07やさしさアンチック
-COPY dockerfile/07YasashisaAntique/fonts.conf /root/.config/fontconfig/
-COPY dockerfile/07YasashisaAntique/07YasashisaAntique.ttf /root/.local/share/fonts/
-# IPAゴシック
-#COPY dockerfile/ipag/fonts.conf /root/.config/fontconfig/
-#COPY dockerfile/ipag/ipag.ttc /root/.local/share/fonts/
+COPY 07YasashisaAntique/fonts.conf /root/.config/fontconfig/
+COPY 07YasashisaAntique/07YasashisaAntique.ttf /root/.local/share/fonts/
 
 WORKDIR /srv/honkit
 VOLUME /srv/honkit

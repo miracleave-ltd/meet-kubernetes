@@ -1,5 +1,7 @@
 web:
-  image: tukiyo3/honkit
+  # image: tukiyo3/honkit
+  build: ./dockerfile
+  container_name: honkit
   restart: always
   volumes:
     - ./honkit:/srv/honkit
