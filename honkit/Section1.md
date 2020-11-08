@@ -31,7 +31,7 @@ Dockerはアプリケーションとライブラリを同一のコンテナ内�
 
 <br><br>
 
-## Kubernetes(K8s)とは(https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
+## Kubernetes(K8s)とは
 
 Kubernetes（クバネティス/クバネテス/クーべネティス、K8s）は、コンテナ化したアプリケーションのデプロイ、スケーリング、および管理を行うための、オープンソースのコンテナオーケストレーションシステムである。
 
