@@ -139,7 +139,7 @@ API経由でKubenetesを操作するためのクライアントツール
 <br>
 #### Deployments
 DeploymentsはPodの管理をします。
-Deploymentオブジェクトの目的の状態を記述するだけで、目的の状態に変更してくれます。神ってる。
+Deploymentオブジェクトの目的の状態を記述するだけで、目的の状態に変更してくれます。
 
 <br><br>
 
