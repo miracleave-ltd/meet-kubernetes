@@ -7,7 +7,7 @@
         <title>はじめに · mirameet</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 3.6.6">
+        <meta name="generator" content="HonKit 3.6.11">
         
         
         
@@ -80,7 +80,7 @@
     </head>
     <body>
         
-<div class="book">
+<div class="book honkit-cloak">
     <div class="book-summary">
         
             
@@ -155,6 +155,65 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5" data-path="Section4.html">
+            
+                <a href="Section4.html">
+            
+                    
+                    セクション４
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Section5.html">
+            
+                <a href="Section5.html">
+            
+                    
+                    セクション５
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tips</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="Chocolatery.html">
+            
+                <a href="Chocolatery.html">
+            
+                    
+                    Chocolateryインストール手順
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Homebrew.html">
+            
+                <a href="Homebrew.html">
+            
+                    
+                    Homebrewインストール手順
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -162,7 +221,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="Company.html">
+        <li class="chapter " data-level="3.1" data-path="Company.html">
             
                 <a href="Company.html">
             
@@ -221,7 +280,34 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x306F;&#x3058;&#x3081;&#x306B;"><a name="&#x306F;&#x3058;&#x3081;&#x306B;" class="plugin-anchor" href="#&#x306F;&#x3058;&#x3081;&#x306B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x306F;&#x3058;&#x3081;&#x306B;</h1>
-
+<h2 id="&#x524D;&#x63D0;">1. &#x524D;&#x63D0;</h2>
+<ul>
+<li><a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop</a></li>
+<li><a href="https://git-scm.com/" target="_blank">Git</a></li>
+</ul>
+<p>&#x203B;Windows/MacOS&#x3067;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<h2 id="Kubernetes">2. Kubernetes</h2>
+<p>Docker Desktop&#x306B;&#x306F;&#x3001;Kubernetes&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3068;&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x304C;&#x5185;&#x5305;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+Docker&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5185;&#x3067;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x306B;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x3001;&#x5358;&#x4E00;&#x30CE;&#x30FC;&#x30C9;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x30FC;&#x3068;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<ol>
+<li>&#x30BF;&#x30B9;&#x30AF;&#x30D0;&#x30FC;&#x306B;&#x3042;&#x308B;<img src="img/docker-desktop.png" alt="docker-icon">&#x3092;&#x53F3;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x3066;&#x3001; <code>Settings</code> &#x3092;&#x9078;&#x629E;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</li>
+<li>&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x306B;&#x3042;&#x308B; <code>Kubernetes</code> &#x3092;&#x9078;&#x629E;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+ <img src="img/docker-desktop-kubernetes.png" alt="docker-desktop-kubernetes"></li>
+<li><code>Enable Kubernetes</code> &#x3092;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3057;&#x3001; <code>Apply&amp;Restart</code> &#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br> &#x3057;&#x3070;&#x3089;&#x304F;&#x3059;&#x308B;&#x3068;&#x2462;&#x306E;&#x7B87;&#x6240;&#x306B;Kubernetes Running&#x3068;&#x8868;&#x793A;&#x3057;&#x307E;&#x3059;&#x3002;
+ <img src="img/docker-desktop-kubernetes-enable.png" alt="docker-desktop-kubernetes-enable"></li>
+</ol>
+<h2 id="Kompose">3. Kompose</h2>
+<h3 id="Windows&#x306E;&#x5834;&#x5408;">3.1. Windows&#x306E;&#x5834;&#x5408;</h3>
+<p>Windows&#x3067;&#x306F;&#x3001;Chocolatey&#x3067;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x203B;Chocolatery&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x65B9;&#x306F;<a href="Chocolatery.html">&#x3053;&#x3061;&#x3089;</a></p>
+<pre><code class="lang-PowerShell">choco install kubernetes-kompose
+</code></pre>
+<h3 id="MacOS&#x306E;&#x5834;&#x5408;">3.2. MacOS&#x306E;&#x5834;&#x5408;</h3>
+<p>MacOS&#x3067;&#x306F;&#x3001;Homebrew&#x3067;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x203B;Homebrew&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x65B9;&#x306F;<a href="Homebrew.html">&#x3053;&#x3061;&#x3089;</a></p>
+<pre><code class="lang-Shell">brew install kompose
+</code></pre>
+<div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x306F;&#x3058;&#x3081;&#x306B;">&#x306F;&#x3058;&#x3081;&#x306B;</a></p><li><a href="#&#x524D;&#x63D0;">1. &#x524D;&#x63D0;</a></li><li><a href="#Kubernetes">2. Kubernetes</a></li><li><a href="#Kompose">3. Kompose</a></li><ul><li><a href="#Windows&#x306E;&#x5834;&#x5408;">3.1. Windows&#x306E;&#x5834;&#x5408;</a></li><li><a href="#MacOS&#x306E;&#x5834;&#x5408;">3.2. MacOS&#x306E;&#x5834;&#x5408;</a></li></ul></ul></div><a href="#&#x524D;&#x63D0;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
                             
@@ -260,12 +346,56 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"はじめに","level":"1.1","depth":1,"next":{"title":"セクション１","level":"1.2","depth":1,"path":"Section1.md","ref":"Section1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro-fixed","-lunr","-search","hide-published-with","anchors","navigator","collapsible-chapters","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-chapters":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"search-pro-fixed":{},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"navigator":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mirameet","language":"ja","gitbook":"*"},"file":{"path":"README.md","mtime":"2020-11-03T08:02:04.463Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2020-11-03T08:33:59.193Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"はじめに","level":"1.1","depth":1,"next":{"title":"セクション１","level":"1.2","depth":1,"path":"Section1.md","ref":"Section1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro-fixed","-lunr","-search","hide-published-with","anchors","navigator","collapsible-chapters","hints","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-chapters":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"search-pro-fixed":{},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"navigator":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mirameet","language":"ja","gitbook":"*"},"file":{"path":"README.md","mtime":"2020-11-09T00:36:43.094Z","type":"markdown"},"gitbook":{"version":"3.6.11","time":"2020-11-12T09:16:08.588Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
 
         
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
     
@@ -283,6 +413,10 @@
     
         
         <script src="gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
         
     
         
