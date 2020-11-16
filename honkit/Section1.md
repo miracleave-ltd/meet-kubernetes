@@ -31,13 +31,13 @@ No.4 Komposeとは<br>
 ### Dockerのメリット<br>
 #### ・資源の効率化<br>
 
-（写真）
+![VM・Docker](https://d33wubrfki0l68.cloudfront.net/26a177ede4d7b032362289c6fccd448fc4a91174/eb693/images/docs/container_evolution.svg)
 
 Dockerはホストカーネルを共有し、従来のハイパーバイザ型のHyper-Vやホスト型のVirtualBox等のようにOSを丸ごとインストールする必要がなく資源を効率的に扱える。<br>
 
 #### ・アプリ実行環境構築の容易さ<br>
 
-（写真）
+![Dockerのイメージ](./img/docker-image.png)
 
 Dockerはアプリケーションとライブラリを同一のコンテナ内に固めることができ、一度固めたコンテナは軽量で持ち運びが容易。DockerがインストールされているOSであれば移動が容易に行える。<br>
 
