@@ -127,7 +127,15 @@ Pod は1つ以上のコンテナから構成されており、ネットワーク
 DeploymentsはPodとReplicaSetをまとめたもので、ReplicaSetの履歴を管理をします。
 Deploymentオブジェクトの目的の状態を記述するだけで、目的の状態に変更してくれます。<br>
 ### Service(サービス)
-サービスは、単一の安定したIPアドレスや対応するDNS名など、一連のポッドとそれらにアクセスする手段を定義します。ロードバランサのようなものです。
+サービスは、単一の安定したIPアドレスや対応するDNS名など、一連のポッドとそれらにアクセスする手段を定義します。
+Serviceにはいくつか種類があり、そのうちのよく使われる３つを紹介します。<br>
+#### ・clusterIP
+ClusterIPはKubernetes内での通信で利用します。クラスタ内でIPアドレスが払い出され、それを利用してPod間で通信を行います。
+#### ・NodePort
+NodePortはKubernetesのNodeのランダムなポートを使用して外部のサーバーからの疎通性を取ってくれます。 その後はClusterIPのServiceと同様です。
+#### ・LoadBalancer
+LoadBalancerはNodePortのServiceを作成した上で、さらに外部のLoadBalanerを作成し、LoadBalancerのUpstreamとしてNodePortで疎通性を取っているポートへ転送するよう設定してくれます。
+
 ### ラベル(Label)
 ラベルは、ポッドなどのリソースにアタッチされるキー/値のペアです。ラベルを使用して、リソースのサブセットを整理し、選択することができます。<br>
 ### kubectl
