@@ -111,30 +111,44 @@ k8sクラスタの状態を常に監視するバックエンドコンポーネ�
 ノードは、Kubernetesを実行している物理マシンまたは仮想マシンで、ポッドを動かします。ノードの管理はマスターサーバが行います。
 <br>
 
-（写真）
+![Dockerのイメージ](./img/node.png)
 
 ### ポッド(Pod)
 Pod は1つ以上のコンテナから構成されており、ネットワークは隔離されておらず、IP Addressなどは共有しています。Kubernetesの最小単位です。
 <br>
 
-(写真)
+![Dockerのイメージ](./img/pod.png)
 
 ### レプリカセット(Replica Set)
 レプリカセットは、指定した数のポッドレプリカがいつでも実行されていることを確認します。両方とも、複製されたシステムの簡単なスケーリングを可能にし、ポッドが再起動したとき、または失敗したときにポッドの再作成を処理します。
 クラスタ内にPodをいくつ起動しておくかの値を「レプリカ数」と呼びます。<br>
 また、Podがダウンしてしまった際にも、Replica Setは指定されたレプリカ数になるようにコンテナを起動します。
+
+![Dockerのイメージ](./img/replicaset.png)
+
 ### Deployments(デプロイメント)
 DeploymentsはPodとReplicaSetをまとめたもので、ReplicaSetの履歴を管理をします。
 Deploymentオブジェクトの目的の状態を記述するだけで、目的の状態に変更してくれます。<br>
+
+![Dockerのイメージ](./img/deployment.png)
+
 ### Service(サービス)
 サービスは、単一の安定したIPアドレスや対応するDNS名など、一連のポッドとそれらにアクセスする手段を定義します。
 Serviceにはいくつか種類があり、そのうちのよく使われる３つを紹介します。<br>
 #### ・clusterIP
 ClusterIPはKubernetes内での通信で利用します。クラスタ内でIPアドレスが払い出され、それを利用してPod間で通信を行います。
+
+![Dockerのイメージ](./img/clusterIp.png)
+
 #### ・NodePort
 NodePortはKubernetesのNodeのランダムなポートを使用して外部のサーバーからの疎通性を取ってくれます。 その後はClusterIPのServiceと同様です。
+
+![Dockerのイメージ](./img/nodePort.png)
+
 #### ・LoadBalancer
 LoadBalancerはNodePortのServiceを作成した上で、さらに外部のLoadBalanerを作成し、LoadBalancerのUpstreamとしてNodePortで疎通性を取っているポートへ転送するよう設定してくれます。
+
+![Dockerのイメージ](./img/LoadBalancer.png)
 
 ### ラベル(Label)
 ラベルは、ポッドなどのリソースにアタッチされるキー/値のペアです。ラベルを使用して、リソースのサブセットを整理し、選択することができます。<br>
