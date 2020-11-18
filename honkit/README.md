@@ -28,9 +28,24 @@ Windowsでは、Chocolateyでインストールできます。
 
 ※Chocolateryをインストールしていない方は[こちら](Chocolatery.md)
 
-```PowerShell
-choco install kubernetes-kompose
-```
+1. Power Shellを起動する
+2. Windowsのスタートボタンを押します。
+3. メニューにある「Windows PowerShell」を右クリックして、 `管理者として実行` を選択します。
+4. Power Shellにインストールコマンドを入力し、実行します。
+
+    ```PowerShell
+    choco install kubernetes-kompose
+    ```
+
+5. `choco list -l` を実行して、 `kubernetes-kompose` が表示されるとインストール完了です。
+
+    ```PowerShell
+    PS C:\> choco list -l
+    Chocolatey v0.10.15
+    chocolatey 0.10.15
+    kubernetes-kompose 1.22.0
+    2 packages installed.
+    ```
 
 ### MacOSの場合
 
@@ -38,6 +53,16 @@ MacOSでは、Homebrewでインストールできます。
 
 ※Homebrewをインストールしていない方は[こちら](Homebrew.md)
 
-```Shell
-brew install kompose
-```
+1. ターミナルを起動する。
+2. ターミナルにインストールコマンドを入力し、実行します。
+
+    ```Shell
+    brew install kompose
+    ```
+
+3. `brew list` を実行して、 `kompose` が表示されるとインストール完了です。
+
+    ```Shell
+    pc:go-react-todo-master pc$ brew list
+    kompose
+    ```

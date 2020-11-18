@@ -106,15 +106,15 @@
     対象ファイル：(go-react-todo)/server-deployment.yaml
 
     ```yml
-    - [36] image: server
-    + [36] image: go-react-todo-master_server
+    - [34] image: server
+    + [34] image: go-react-todo-master_server
     ```
 
     対象ファイル：(go-react-todo)/nginx-deployment.yaml
 
     ```yml
-    - [33] - image: nginx
-    + [33] - image: go-react-todo-master_nginx
+    - [31] - image: nginx
+    + [31] - image: go-react-todo-master_nginx
     ```
 
 7. Kubernetesに変換したファイルをKubernetesに反映します。

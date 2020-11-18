@@ -301,13 +301,38 @@ Docker&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5185;&#x3067;&#x30ED;&#
 <h3 id="Windows&#x306E;&#x5834;&#x5408;">3.1. Windows&#x306E;&#x5834;&#x5408;</h3>
 <p>Windows&#x3067;&#x306F;&#x3001;Chocolatey&#x3067;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x203B;Chocolatery&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x65B9;&#x306F;<a href="Chocolatery.html">&#x3053;&#x3061;&#x3089;</a></p>
-<pre><code class="lang-PowerShell">choco install kubernetes-kompose
+<ol>
+<li>Power Shell&#x3092;&#x8D77;&#x52D5;&#x3059;&#x308B;</li>
+<li>Windows&#x306E;&#x30B9;&#x30BF;&#x30FC;&#x30C8;&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x62BC;&#x3057;&#x307E;&#x3059;&#x3002;</li>
+<li>&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x306B;&#x3042;&#x308B;&#x300C;Windows PowerShell&#x300D;&#x3092;&#x53F3;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x3066;&#x3001; <code>&#x7BA1;&#x7406;&#x8005;&#x3068;&#x3057;&#x3066;&#x5B9F;&#x884C;</code> &#x3092;&#x9078;&#x629E;&#x3057;&#x307E;&#x3059;&#x3002;</li>
+<li><p>Power Shell&#x306B;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x3001;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-PowerShell"> choco install kubernetes-kompose
 </code></pre>
+</li>
+<li><p><code>choco list -l</code> &#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3001; <code>kubernetes-kompose</code> &#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x3068;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5B8C;&#x4E86;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-PowerShell"> PS C:\&gt; choco list -l
+ Chocolatey v0.<span class="hljs-number">10.15</span>
+ chocolatey <span class="hljs-number">0.10</span>.<span class="hljs-number">15</span>
+ kubernetes-kompose <span class="hljs-number">1.22</span>.<span class="hljs-number">0</span>
+ <span class="hljs-number">2</span> packages installed.
+</code></pre>
+</li>
+</ol>
 <h3 id="MacOS&#x306E;&#x5834;&#x5408;">3.2. MacOS&#x306E;&#x5834;&#x5408;</h3>
 <p>MacOS&#x3067;&#x306F;&#x3001;Homebrew&#x3067;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x203B;Homebrew&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x65B9;&#x306F;<a href="Homebrew.html">&#x3053;&#x3061;&#x3089;</a></p>
-<pre><code class="lang-Shell">brew install kompose
+<ol>
+<li>&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x3092;&#x8D77;&#x52D5;&#x3059;&#x308B;&#x3002;</li>
+<li><p>&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x306B;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x3001;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-Shell"> brew install kompose
 </code></pre>
+</li>
+<li><p><code>brew list</code> &#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3001; <code>kompose</code> &#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x3068;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5B8C;&#x4E86;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-Shell"> pc:go-react-todo-master pc$ brew list
+ kompose
+</code></pre>
+</li>
+</ol>
 <div id="anchors-navbar"><i class="fa fa-anchor"></i><ul><p><a href="#&#x306F;&#x3058;&#x3081;&#x306B;">&#x306F;&#x3058;&#x3081;&#x306B;</a></p><li><a href="#&#x524D;&#x63D0;">1. &#x524D;&#x63D0;</a></li><li><a href="#Kubernetes">2. Kubernetes</a></li><li><a href="#Kompose">3. Kompose</a></li><ul><li><a href="#Windows&#x306E;&#x5834;&#x5408;">3.1. Windows&#x306E;&#x5834;&#x5408;</a></li><li><a href="#MacOS&#x306E;&#x5834;&#x5408;">3.2. MacOS&#x306E;&#x5834;&#x5408;</a></li></ul></ul></div><a href="#&#x524D;&#x63D0;" id="goTop"><i class="fa fa-arrow-up"></i></a>
                                 
                                 </section>
@@ -347,7 +372,7 @@ Docker&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5185;&#x3067;&#x30ED;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"はじめに","level":"1.1","depth":1,"next":{"title":"セクション１","level":"1.2","depth":1,"path":"Section1.md","ref":"Section1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro-fixed","-lunr","-search","hide-published-with","anchors","navigator","collapsible-chapters","hints","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-chapters":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"search-pro-fixed":{},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"navigator":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mirameet","language":"ja","gitbook":"*"},"file":{"path":"README.md","mtime":"2020-11-12T10:57:51.456Z","type":"markdown"},"gitbook":{"version":"3.6.11","time":"2020-11-18T11:24:37.442Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"はじめに","level":"1.1","depth":1,"next":{"title":"セクション１","level":"1.2","depth":1,"path":"Section1.md","ref":"Section1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["search-pro-fixed","-lunr","-search","hide-published-with","anchors","navigator","collapsible-chapters","hints","copy-code-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-chapters":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"search-pro-fixed":{},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"navigator":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mirameet","language":"ja","gitbook":"*"},"file":{"path":"README.md","mtime":"2020-11-18T11:42:21.721Z","type":"markdown"},"gitbook":{"version":"3.6.11","time":"2020-11-18T11:42:33.952Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

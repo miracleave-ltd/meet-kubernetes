@@ -28,8 +28,7 @@ PS C:\> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePoi
 PS C:\> choco list -l
 Chocolatey v0.10.15
 chocolatey 0.10.15
-kubernetes-kompose 1.22.0
-2 packages installed.
+1 packages installed.
 ```
 
 以上でインストールは完了です。
