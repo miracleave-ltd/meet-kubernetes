@@ -12,7 +12,7 @@ ChocolateryはWindows用のパッケージマネージャーとなります。
 
 1. Power Shellを起動する
 2. Windowsのスタートボタンを押します。
-3. メニューにある「Windows PowerShell」から「Windows PowerShell」を選択します。
+3. メニューにある「Windows PowerShell」を右クリックして、 `管理者として実行` を選択します。
 4. Chocolatery公式サイトにある[インストールページ](https://chocolatey.org/install)にアクセスし、インストールコマンドを確認します。
 5. Power Shellにインストールコマンドを入力し、実行します。
 
@@ -28,7 +28,8 @@ PS C:\> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePoi
 PS C:\> choco list -l
 Chocolatey v0.10.15
 chocolatey 0.10.15
-1 packages installed.
+kubernetes-kompose 1.22.0
+2 packages installed.
 ```
 
 以上でインストールは完了です。
