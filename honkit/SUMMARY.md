@@ -5,7 +5,6 @@
 * [セクション２](Section2.md)
 * [セクション３](Section3.md)
 * [セクション４](Section4.md)
-* [セクション５](Section5.md)
 
 ## Tips
 * [Chocolateryインストール手順](Chocolatery.md)
