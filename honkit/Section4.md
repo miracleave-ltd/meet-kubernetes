@@ -1,4 +1,4 @@
-# Section5
+# Section4
 
 今回のハンズオンで汚してしまった環境を片づけます。
 
@@ -25,7 +25,7 @@
     kubectl delete svc nginx postgres server
     ```
 
-3. kubernetesから各情報が削除されたことを確認します。
+3. kubernetesから各情報が削除されたことを確認します。  
     ※service/kubernetesは標準で起動されるものとなります。
 
     ```shell
