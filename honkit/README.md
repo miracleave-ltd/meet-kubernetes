@@ -13,6 +13,7 @@ Docker Desktopには、Kubernetesサーバーとクライアントが内包さ�
 Dockerインスタンス内でローカルに実行され、単一ノードクラスターとなっています。
 
 1. タスクバーにある![docker-icon](img/docker-desktop.png)を右クリックして、 `Settings` を選択してください。
+    Macの方：Dashboard,もしくはpreferenceをクリックしてください。
 2. メニューにある `Kubernetes` を選択してください。
     ![docker-desktop-kubernetes](img/docker-desktop-kubernetes.png)
 3. `Enable Kubernetes` をチェックし、 `Apply&Restart` をクリックしてください。  
