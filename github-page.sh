@@ -1,3 +1,3 @@
 set -eu
 
-cp -R $(pwd)/honkit/_book $(pwd)/docs
+cp -pR $(pwd)/honkit/_book/* $(pwd)/docs
