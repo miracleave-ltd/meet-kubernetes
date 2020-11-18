@@ -104,6 +104,15 @@
 
     対象ファイル：(go-react-todo)/server-deployment.yaml
 
+    Windowsの場合
+
+    ```yml
+    - [36] image: server
+    + [36] image: go-react-todo-master_server
+    ```
+
+    Macの場合
+
     ```yml
     - [34] image: server
     + [34] image: go-react-todo-master_server
@@ -111,6 +120,14 @@
 
     対象ファイル：(go-react-todo)/nginx-deployment.yaml
 
+    Windowsの場合
+
+    ```yml
+    - [33] - image: nginx
+    + [33] - image: go-react-todo-master_nginx
+    ```
+
+    Macの場合
     ```yml
     - [31] - image: nginx
     + [31] - image: go-react-todo-master_nginx
@@ -133,11 +150,11 @@
 
     ※kubectlでは略語を使用できます。
 
-    | 名称        | 略称   |
-    | ----------- | ------ |
-    | pods        | pod    |
-    | deployments | deploy |
-    | services    | svc    |
+| 名称        | 略称   |
+| ----------- | ------ |
+| pods        | pod    |
+| deployments | deploy |
+| services    | svc    |
 
     (WindowsPowerShell)
     ![kubectl-get-pod-service-deploy](img/kubectl-get-pod-service-deploy.png)

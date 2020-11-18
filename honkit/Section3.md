@@ -8,7 +8,7 @@
 1. 次のファイルを修正してください。  
     青背景から赤背景に変更します。
 
-    対象ファイル：(go-react-todo-master)/client\src\stylesheets\main.less
+    対象ファイル：(go-react-todo-master)/client/src/stylesheets/main.less
 
     ```less
     - [2] background-color:lightcyan;
