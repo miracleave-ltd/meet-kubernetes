@@ -128,10 +128,16 @@
 8. Kubernetesの状態確認を行います。
 
     ```Shell
-    kubectl get pods,deploy,svc
+    kubectl get pod,deploy,svc
     ```
 
-    ※deploy -> deployments, svc -> services
+    ※kubectlでは略語を使用できます。
+
+    | 名称        | 略称   |
+    | ----------- | ------ |
+    | pods        | pod    |
+    | deployments | deploy |
+    | services    | svc    |
 
     (WindowsPowerShell)
     ![kubectl-get-pod-service-deploy](img/kubectl-get-pod-service-deploy.png)
