@@ -36,3 +36,7 @@ miracleaveでは、「テクノロジーで未来を切り拓く」をミッシ�
 ## 次回のmirameetについて
 
 ![mirameet_vol13](img/mirameet_vol13.png)
+
+### 応募はこちらから
+
+![wantedly_qr](img/wantedly-qr.png)

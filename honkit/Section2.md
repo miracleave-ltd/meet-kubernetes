@@ -150,11 +150,10 @@
 
     ※kubectlでは略語を使用できます。
 
-| 名称        | 略称   |
-| ----------- | ------ |
-| pods        | pod    |
-| deployments | deploy |
-| services    | svc    |
+    名称: 略称
+    - pods: pod
+    - deployments: deploy
+    - services: svc
 
     (WindowsPowerShell)
     ![kubectl-get-pod-service-deploy](img/kubectl-get-pod-service-deploy.png)
