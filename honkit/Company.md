@@ -32,3 +32,7 @@ miracleaveでは、「テクノロジーで未来を切り拓く」をミッシ�
 他にもBBQやダーツ大会、ボードゲーム、スマブラ大会などとにかく楽しくをモットーにスキルアップだけではなく様々なイベントにも参加いただけます。
 
 [![採用情報](img/recruit.png)](https://www.miracleave.co.jp/recruit/)
+
+## 次回のmirameetについて
+
+![mirameet_vol13](img/mirameet_vol13.png)
